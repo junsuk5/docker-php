@@ -1,1 +1,6 @@
-# docker의 리눅스와 연동하는 php 소스코드
+php apache mysql 기본설정 도커파일 세팅
+docker-compose build
+docker-compose up -d
+하면
+웹서버 9001번
+데이터베이스 52000번 세팅됨
