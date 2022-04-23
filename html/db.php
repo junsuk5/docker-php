@@ -18,15 +18,24 @@ $connect = new mysqli($mysql_hostname, $mysql_username, $mysql_password, $mysql_
 
  
 
-if($connect->connect_errno){
+if ($connect->connect_errno) {
 
     echo '[연결실패..] : '.$connect->connect_error.'';
 
-}else{
+} else {
 
-    echo '[연결성공!]'.'<br>';
+    // echo '[연결성공!]'.'<br>';
+    $results = array();
+    
+    // test_db 먼저 만들고
+    $result = $connect->query("select * from test_db");
+    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+      $results[] = $row;
+    }
+    echo json_encode($results);
 
 }
+
 
  
 
