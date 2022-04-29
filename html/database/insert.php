@@ -1,16 +1,15 @@
 <?php
+include('db_setup.php');
 
-include "conn.php";
+$content = $_GET[content];
 
-$sql = "INSERT INTO MyGuests (firstname, lastname, email)
-VALUES ('John', 'Doe', 'john@example.com')";
+$sql = "INSERT INTO board (update_time, content) VALUES (CURRENT_TIMESTAMP(), '$content')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
+  echo 'Insert New Record';
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo $conn->error;
 }
 
 $conn->close();
-
 ?>
