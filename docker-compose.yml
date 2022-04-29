@@ -15,7 +15,7 @@ services:
 
   mysql:
     image: mysql:5.7
-    platform: linux/x86_64
+    platform: linux/amd64
     environment:
       MYSQL_ROOT_PASSWORD: 'json'
       MYSQL_USER: 'kim'
